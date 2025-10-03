@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import authRouter from './routes/auth';
 import productsRouter from './routes/products';
 import aiRouter from './routes/ai';
+import exportRouter from './routes/export';
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/auth', authRouter);
 app.use('/products', productsRouter);
 app.use('/ai', aiRouter);
+app.use('/export', exportRouter);
 
 app.get('/health', (req, res) => res.json({ ok: true }));
 
